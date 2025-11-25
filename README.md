@@ -1,2 +1,3 @@
-# my-hyprland-rice
+# My Hyprland Rice
+
 My rice for Hyprland
