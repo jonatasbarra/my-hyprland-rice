@@ -54,7 +54,7 @@ button:hover {
 }
 
 #workspaces {
-    background-color: #F3682F;
+    background-color: #021A2F;
     border-radius: 15px;
     border: 1px solid #FFFFFF;
 }
@@ -68,12 +68,12 @@ button:hover {
 
 #workspaces button.active {
     background-color: #FFFFFF;
-    color: #F3682F;
+    color: #021A2F;
 }
 
 #workspaces button:hover {
     background: #FFFFFF;
-    color: #F3682F;
+    color: #021A2F;
 }
 
 #workspaces button.focused {
@@ -129,11 +129,11 @@ button:hover {
 }
 
 #clock {
-    background-color: #F3682F;
+    background-color: #021A2F;
 }
 
 #battery {
-    background-color: #F3682F;
+    background-color: #021A2F;
 }
 
 #battery.charging, #battery.plugged {
@@ -150,7 +150,7 @@ button:hover {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: #021A2F;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -183,19 +183,19 @@ label:focus {
 }
 
 #cpu {
-    background-color: #F3682F;
+    background-color: #021A2F;
 }
 
 #memory {
-    background-color: #F3682F;
+    background-color: #021A2F;
 }
 
 #disk {
-    background-color: #964B00;
+    background-color: #021A2F;
 }
 
 #backlight {
-    background-color: #F3682F;
+    background-color: #021A2F;
 }
 
 #network {
@@ -207,7 +207,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #F3682F;
+    background-color: #021A2F;
 }
 
 #pulseaudio.muted {
@@ -239,7 +239,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: #F3682F;
+    background-color: #021A2F;
 }
 
 #temperature.critical {
