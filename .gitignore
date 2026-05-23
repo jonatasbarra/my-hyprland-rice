@@ -1,0 +1,19 @@
+# Secrets
+*.key
+*.pem
+*.env
+.env*
+secrets/
+
+# Shell history
+.bash_history
+.zsh_history
+
+# Caches
+__pycache__/
+*.pyc
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
