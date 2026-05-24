@@ -24,3 +24,4 @@ tealdeer
 rustup
 docker
 docker-compose
+distrobox
