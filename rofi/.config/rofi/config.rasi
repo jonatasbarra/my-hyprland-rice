@@ -1,0 +1,99 @@
+configuration {
+    modi:                   "drun,run,window";
+    show-icons:             true;
+    drun-display-format:    "{name}";
+    font:                   "JetBrainsMono Nerd Font 13";
+    icon-theme:             "Papirus-Dark";
+    terminal:               "kitty";
+    hover-select:           true;
+    me-select-entry:        "";
+    me-accept-entry:        "MousePrimary";
+}
+
+// ── Tokyo Night palette ──────────────────────────────────
+// bg:      #1a1b26   surface:  #24283b   border:  #292e42
+// fg:      #c0caf5   comment:  #565f89
+// blue:    #7aa2f7   cyan:     #7dcfff   green:   #9ece6a
+// yellow:  #e0af68   red:      #f7768e   magenta: #bb9af7
+
+* {
+    bg:             #1a1b26f2;  /* f2 = ~95% opaque */
+    surface:        #24283b;
+    border-color:   #292e42;
+    fg:             #c0caf5;
+    comment:        #565f89;
+    accent:         #7aa2f7;
+    urgent:         #f7768e;
+
+    background-color:   transparent;
+    text-color:         @fg;
+}
+
+window {
+    background-color:   @bg;
+    border:             1px solid;
+    border-color:       @border-color;
+    border-radius:      12px;
+    width:              480px;
+    padding:            12px;
+}
+
+mainbox {
+    background-color:   transparent;
+    children:           [ inputbar, listview ];
+    spacing:            8px;
+}
+
+inputbar {
+    background-color:   @surface;
+    border-radius:      8px;
+    padding:            8px 12px;
+    children:           [ prompt, entry ];
+    spacing:            8px;
+}
+
+prompt {
+    text-color: @accent;
+    font:       "JetBrainsMono Nerd Font Bold 13";
+}
+
+entry {
+    text-color:         @fg;
+    placeholder:        "Search...";
+    placeholder-color:  @comment;
+    cursor:             text;
+}
+
+listview {
+    background-color:   transparent;
+    columns:            1;
+    lines:              8;
+    spacing:            4px;
+    scrollbar:          false;
+}
+
+element {
+    background-color:   transparent;
+    border-radius:      8px;
+    padding:            8px 10px;
+    spacing:            10px;
+    children:           [ element-icon, element-text ];
+}
+
+element selected {
+    background-color:   @surface;
+    text-color:         @accent;
+}
+
+element-icon {
+    size:               24px;
+    vertical-align:     0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element urgent {
+    text-color: @urgent;
+}
