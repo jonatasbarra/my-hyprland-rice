@@ -1,0 +1,29 @@
+#!/bin/bash
+# Wallpaper switcher usando awww
+# Uso: wallpaper [arquivo]
+# Sem argumento: usa wallpaper padrão
+
+WALLPAPER_DIR="$HOME/wallpapers"
+DEFAULT="$WALLPAPER_DIR/tokyonight01.png"
+
+if [ -n "$1" ]; then
+    TARGET="$1"
+else
+    TARGET="$DEFAULT"
+fi
+
+if [ ! -f "$TARGET" ]; then
+    echo "Erro: arquivo não encontrado: $TARGET"
+    exit 1
+fi
+
+# Inicia daemon se não estiver rodando
+if ! pgrep -x awww-daemon > /dev/null; then
+    awww-daemon &
+    sleep 0.5
+fi
+
+awww img "$TARGET" \
+    --transition-type fade \
+    --transition-duration 1 \
+    --transition-fps 60
