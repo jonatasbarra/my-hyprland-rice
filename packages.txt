@@ -1,11 +1,98 @@
+# =============================================================================
+# packages.txt — pacman explicit packages
+# Install with: sudo pacman -S --needed - < packages.txt
+# =============================================================================
+
+# === BASE SYSTEM ===
+base
+base-devel
+linux-zen
+linux-zen-headers
+linux-firmware
+intel-ucode
+btrfs-progs
+zram-generator
+snapper
+sudo
+nano
+vim
+less
+
+# === NETWORK ===
+networkmanager
+openssh
+
+# === GPU / MEDIA ===
+mesa
+lib32-mesa
+vulkan-intel
+vulkan-icd-loader
+intel-media-driver
+libva-utils
+
+# === AUDIO ===
+pipewire
+pipewire-audio
+pipewire-alsa
+pipewire-pulse
+wireplumber
+sof-firmware
+
+# === POWER ===
+power-profiles-daemon
+thermald
+
+# === HYPRLAND STACK ===
+hyprland
+uwsm
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+qt5-wayland
+qt6-wayland
+polkit-gnome
+python-gobject
+
+# === DESKTOP COMPONENTS ===
+waybar
+rofi
+swaync
+hyprlock
+hypridle
+hyprpicker
+awww
+grim
+slurp
+swappy
+cliphist
+wl-clipboard
+brightnessctl
+foot
+libnotify
+imagemagick
+jq
+
+# === THEMING ===
 inter-font
+ttf-jetbrains-mono-nerd
 papirus-icon-theme
 nwg-look
 qt5ct
 qt6ct
 kvantum
 kvantum-qt5
-# F6 - Terminal + Shell + CLI
+
+# === APPS ===
+kitty
+thunar
+thunar-volman
+gvfs
+gnome-keyring
+
+# === BROWSERS (optional — keep what you use) ===
+firefox
+chromium
+
+# === TERMINAL + SHELL + CLI ===
 zsh
 starship
 tmux
@@ -21,7 +108,15 @@ btop
 lazygit
 github-cli
 tealdeer
+
+# === DEV TOOLS ===
+git
+stow
+neovim
+zed
+mise
 rustup
 docker
 docker-compose
 distrobox
+

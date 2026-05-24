@@ -1,3 +1,17 @@
+# =============================================================================
+# packages-aur.txt — AUR packages (install with paru)
+# Install with: paru -S --needed - < packages-aur.txt
+# Note: paru itself must be installed first (see install.sh)
+# =============================================================================
+
+# === THEMING ===
 bibata-cursor-theme
 papirus-folders-catppuccin-git
 tokyonight-gtk-theme-git
+
+# === APPS ===
+google-chrome
+visual-studio-code-bin
+
+# === SYSTEM ===
+snapper-rollback
