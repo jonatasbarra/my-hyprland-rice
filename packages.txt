@@ -1,1 +1,2 @@
 inter-font
+papirus-icon-theme

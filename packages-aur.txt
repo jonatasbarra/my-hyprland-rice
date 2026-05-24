@@ -1,1 +1,2 @@
 bibata-cursor-theme
+papirus-folders-catppuccin-git
