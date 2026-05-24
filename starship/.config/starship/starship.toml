@@ -1,8 +1,8 @@
-format = "\n$directory$git_branch$git_status$git_state$python$rust$golang$nodejs$java$kotlin$c$cmd_duration\n$character"
-[╭─](overlay0) $directory$git_branch$git_status$git_state$python$rust$golang$nodejs$java$kotlin$c$cmd_duration
-[╰─](overlay0)$character"""
+format = """
+[╭─](bold blue)$username$hostname$directory$git_branch$git_status$python$rust$golang$nodejs
+[╰─](bold blue)$character"""
 
-# ── Diretório ──────────────────────────────────────────
+Diretório ──────────────────────────────────────────
 [directory]
 style = "blue bold"
 truncation_length = 3
