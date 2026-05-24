@@ -1,2 +1,3 @@
 bibata-cursor-theme
 papirus-folders-catppuccin-git
+tokyonight-gtk-theme-git

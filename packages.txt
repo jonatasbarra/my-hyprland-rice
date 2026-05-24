@@ -1,2 +1,3 @@
 inter-font
 papirus-icon-theme
+nwg-look
