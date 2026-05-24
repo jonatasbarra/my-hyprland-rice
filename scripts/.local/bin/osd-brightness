@@ -1,0 +1,25 @@
+#!/bin/bash
+# OSD de brilho via notify-send + swaync
+
+case "$1" in
+    up)
+        brightnessctl set 5%+
+        ;;
+    down)
+        brightnessctl set 5%-
+        ;;
+esac
+
+# Pega brilho atual em percentual
+BRIGHT=$(brightnessctl -m | awk -F, '{print $4}' | tr -d '%')
+
+if [ "$BRIGHT" -lt 33 ]; then
+    ICON="󰋙"
+elif [ "$BRIGHT" -lt 66 ]; then
+    ICON="󰛩"
+else
+    ICON="󰛨"
+fi
+
+notify-send -h string:x-canonical-private-synchronous:brightness \
+    -t 1500 -u low "$ICON Brightness" "${BRIGHT}%"

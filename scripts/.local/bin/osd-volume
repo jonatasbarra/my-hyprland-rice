@@ -1,0 +1,35 @@
+#!/bin/bash
+# OSD de volume via notify-send + swaync
+
+case "$1" in
+    up)
+        wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+        ;;
+    down)
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+        ;;
+    mute)
+        wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+        ;;
+esac
+
+# Pega volume atual
+VOL=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}')
+MUTED=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -c MUTED)
+
+if [ "$MUTED" -gt 0 ]; then
+    ICON="󰝟"
+    MSG="Muted"
+elif [ "$VOL" -lt 33 ]; then
+    ICON="󰕿"
+    MSG="$VOL%"
+elif [ "$VOL" -lt 66 ]; then
+    ICON="󰖀"
+    MSG="$VOL%"
+else
+    ICON="󰕾"
+    MSG="$VOL%"
+fi
+
+notify-send -h string:x-canonical-private-synchronous:volume \
+    -t 1500 -u low "$ICON Volume" "$MSG"
