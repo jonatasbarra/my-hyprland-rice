@@ -5,3 +5,19 @@ qt5ct
 qt6ct
 kvantum
 kvantum-qt5
+# F6 - Terminal + Shell + CLI
+zsh
+starship
+tmux
+eza
+bat
+fd
+ripgrep
+fzf
+zoxide
+git-delta
+dust
+btop
+lazygit
+github-cli
+tealdeer
