@@ -22,3 +22,5 @@ lazygit
 github-cli
 tealdeer
 rustup
+docker
+docker-compose
