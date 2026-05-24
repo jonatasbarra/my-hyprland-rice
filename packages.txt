@@ -21,3 +21,4 @@ btop
 lazygit
 github-cli
 tealdeer
+rustup
