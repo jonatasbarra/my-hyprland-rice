@@ -20,3 +20,13 @@ Thumbs.db
 .zcompdump
 .zcompdump.*
 .gitconfig.local
+
+# Node
+node_modules/
+.npm/
+
+# Rust
+target/
+
+# Zinit cache
+.zinit/
