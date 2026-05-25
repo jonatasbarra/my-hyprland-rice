@@ -4,95 +4,44 @@
     "height": 36,
     "spacing": 4,
     "margin-top": 6,
-    "margin-left": 10,
-    "margin-right": 10,
-
-    "modules-left": [
-        "hyprland/workspaces",
-        "wlr/taskbar"
-    ],
-
-    "modules-center": [
-        "clock"
-    ],
-
-    "modules-right": [
-        "backlight",
-        "pulseaudio",
-        "battery",
-        "network",
-        "tray"
-    ],
-
-    // ── Módulos ──────────────────────────────────────────
-
+    "margin-left": 8,
+    "margin-right": 8,
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar", "custom/media"],
+    "modules-center": ["clock"],
+    "modules-right": ["backlight", "pulseaudio", "battery", "network", "tray"],
     "hyprland/workspaces": {
         "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "active": "",
-            "default": ""
-        },
-        "persistent-workspaces": {
-            "*": 5
-        }
+        "format-icons": {"1": "󰊠", "2": "󰊠", "3": "󰊠", "active": "󰮯", "default": "󰊠"},
+        "persistent-workspaces": {"*": 3}
     },
-
     "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 18,
-        "icon-theme": "Papirus-Dark",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "ignore-list": []
+        "format": "{icon}", "icon-size": 14, "icon-theme": "Papirus-Dark",
+        "tooltip-format": "{title}", "on-click": "activate", "on-click-middle": "close", "ignore-list": []
     },
-
-    "clock": {
-        "format": "  {:%a %d %b  %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "custom/media": {
+        "format": "{icon} {}", "return-type": "json",
+        "format-icons": {"Playing": "󰎇", "Paused": "󰏤", "Stopped": ""},
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} — {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} — {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F 2>/dev/null",
+        "on-click": "playerctl play-pause", "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous", "max-length": 40, "escape": true
     },
-
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰋙", "󰛩", "󰛨", "󰛧"],
-        "scroll-step": 5
-    },
-
+    "clock": {"format": "  {:%a %d %b  %H:%M}", "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"},
+    "backlight": {"format": "{icon} {percent}%", "format-icons": ["󰋙", "󰛩", "󰛨", "󰛧"], "scroll-step": 5},
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟 muted",
-        "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "scroll-step": 5
+        "format": "{icon} {volume}%", "format-muted": "󰝟 muted",
+        "format-icons": {"default": ["󰕿", "󰖀", "󰕾"]},
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", "scroll-step": 5
     },
-
     "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
+        "states": {"warning": 30, "critical": 15},
+        "format": "{icon} {capacity}%", "format-charging": "󰂄 {capacity}%",
         "format-plugged": "󰚥 {capacity}%",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-
     "network": {
-        "format-wifi": "󰤨 {essid}",
-        "format-ethernet": "󰈀 {ifname}",
+        "format-wifi": "󰤨 {essid}", "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰤭 offline",
-        "tooltip-format": "{ifname}: {ipaddr}\n󰤨 {signalStrength}%",
-        "max-length": 20
+        "tooltip-format": "{ifname}: {ipaddr}\n󰤨 {signalStrength}%", "max-length": 20
     },
-
-    "tray": {
-        "spacing": 8
-    }
+    "tray": {"spacing": 6}
 }
