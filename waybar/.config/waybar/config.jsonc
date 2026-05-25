@@ -9,7 +9,7 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window"
+        "wlr/taskbar"
     ],
 
     "modules-center": [
@@ -42,10 +42,14 @@
         }
     },
 
-    "hyprland/window": {
-        "format": "  {}",
-        "max-length": 50,
-        "separate-outputs": true
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "icon-theme": "Papirus-Dark",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": []
     },
 
     "clock": {

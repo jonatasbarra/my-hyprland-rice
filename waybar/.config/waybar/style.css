@@ -12,24 +12,27 @@
     min-height: 0;
 }
 
+/* ── Container principal invisível ───────────────── */
+
 window#waybar {
-    background-color: #1a1b26;
+    background-color: transparent;
     color: #c0caf5;
-    border-radius: 12px;
-    border: 1px solid #292e42;
-    transition: background-color 0.3s ease;
 }
 
 window#waybar.hidden {
     opacity: 0.3;
 }
 
-/* ── Zonas ───────────────────────────────────────── */
+/* ── Ilhas flutuantes ────────────────────────────── */
 
 .modules-left,
 .modules-center,
 .modules-right {
-    padding: 0 4px;
+    background-color: rgba(26, 27, 38, 0.75);
+    border: 1px solid rgba(122, 162, 247, 0.15);
+    border-radius: 12px;
+    padding: 2px 12px;   /* ← era 0 8px */
+    margin: 0 6px;       /* ← era 0 4px */
 }
 
 /* ── Base dos módulos ────────────────────────────── */
@@ -58,17 +61,32 @@ window#waybar.hidden {
 
 #workspaces button.active {
     color: #7aa2f7;
-    background-color: #24283b;
+    background-color: rgba(36, 40, 59, 0.8);
     font-weight: bold;
 }
 
 #workspaces button:hover {
     color: #c0caf5;
-    background-color: #292e42;
+    background-color: rgba(41, 46, 66, 0.8);
 }
 
 #workspaces button.urgent {
     color: #f7768e;
+}
+
+#taskbar button {
+    padding: 2px 6px;
+    background: transparent;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#taskbar button.active {
+    background-color: rgba(36, 40, 59, 0.8);
+}
+
+#taskbar button:hover {
+    background-color: rgba(41, 46, 66, 0.8);
 }
 
 /* ── Window title ────────────────────────────────── */
