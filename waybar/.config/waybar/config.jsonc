@@ -13,14 +13,18 @@
     ],
 
     "modules-center": [
+        "custom/weather",
         "clock"
     ],
 
     "modules-right": [
+        "cpu",
+        "memory",
         "backlight",
         "pulseaudio",
         "battery",
         "network",
+        "custom/powermenu",
         "tray"
     ],
 
@@ -50,6 +54,32 @@
     "clock": {
         "format": "  {:%a %d %b  %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.local/bin/weather-waybar",
+        "interval": 900,
+        "on-click": "xdg-open https://wttr.in"
+    },
+
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "󰘚 {used:0.1f}G",
+        "interval": 5,
+        "tooltip-format": "Used: {used:0.1f}G / {total:0.1f}G"
+    },
+
+    "custom/powermenu": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "$HOME/.local/bin/powermenu"
     },
 
     "backlight": {

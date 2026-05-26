@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# weather-waybar — wttr.in weather module for Waybar
+# Returns JSON: { text, tooltip, class }
+
+WEATHER=$(curl -sf --max-time 10 "https://wttr.in/?format=j1" 2>/dev/null)
+
+if [[ -z "$WEATHER" ]]; then
+    echo '{"text": "󰖑 N/A", "tooltip": "Weather unavailable", "class": "unavailable"}'
+    exit 0
+fi
+
+TEMP_C=$(echo "$WEATHER" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+cc = d['current_condition'][0]
+print(cc['temp_C'])
+")
+
+TEMP_F=$(echo "$WEATHER" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+cc = d['current_condition'][0]
+print(cc['temp_F'])
+")
+
+DESC=$(echo "$WEATHER" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+cc = d['current_condition'][0]
+print(cc['weatherDesc'][0]['value'])
+")
+
+CODE=$(echo "$WEATHER" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+cc = d['current_condition'][0]
+print(cc['weatherCode'])
+")
+
+AREA=$(echo "$WEATHER" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+area = d['nearest_area'][0]
+city = area['areaName'][0]['value']
+country = area['country'][0]['value']
+print(f'{city}, {country}')
+")
+
+# Ícone baseado no código wttr.in
+case "$CODE" in
+    113) ICON="󰖙" ;;           # Sunny/Clear
+    116) ICON="󰖕" ;;           # Partly cloudy
+    119|122) ICON="󰖔" ;;       # Cloudy/Overcast
+    143|248|260) ICON="󰖑" ;;   # Fog/Mist
+    176|263|266|293|296) ICON="󰖗" ;; # Light rain
+    299|302|305|308) ICON="󰖖" ;; # Rain
+    311|314|317|320) ICON="󰖘" ;; # Sleet
+    323|326|329|332|335|338) ICON="󰖙" ;; # Snow
+    350|353|356|359) ICON="󰖗" ;; # Showers
+    362|365|368|371) ICON="󰖘" ;; # Snow showers
+    374|377) ICON="󰖘" ;;       # Ice pellets
+    386|389) ICON="󰖓" ;;       # Thunderstorm with rain
+    392|395) ICON="󰖓" ;;       # Thunderstorm with snow
+    200) ICON="󰖓" ;;           # Thunderstorm
+    *) ICON="󰖑" ;;             # Default
+esac
+
+TEXT="${ICON} ${TEMP_C}°C / ${TEMP_F}°F  ${DESC}"
+TOOLTIP="${AREA}\n${DESC}\n🌡 ${TEMP_C}°C / ${TEMP_F}°F"
+
+echo "{\"text\": \"${TEXT}\", \"tooltip\": \"${TOOLTIP}\", \"class\": \"weather\"}"

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# powermenu — Rofi power menu
+
+SHUTDOWN="󰐥 Shutdown"
+REBOOT="󰑓 Reboot"
+SUSPEND="󰤄 Suspend"
+LOGOUT="󰍃 Logout"
+CANCEL="󰜺 Cancel"
+
+CHOSEN=$(printf "%s\n" "$SHUTDOWN" "$REBOOT" "$SUSPEND" "$LOGOUT" "$CANCEL" \
+    | rofi -dmenu \
+           -p "Power" \
+           -theme-str 'window {width: 200px;}' \
+           -theme-str 'listview {lines: 5;}' \
+           -no-fixed-num-lines \
+           -i)
+
+case "$CHOSEN" in
+    "$SHUTDOWN") systemctl poweroff ;;
+    "$REBOOT")   systemctl reboot ;;
+    "$SUSPEND")  systemctl suspend ;;
+    "$LOGOUT")   hyprctl dispatch exit ;;
+    *)           exit 0 ;;
+esac
