@@ -54,7 +54,8 @@
 
     "clock": {
         "format": "  {:%a %d %b  %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "xdg-open https://calendar.google.com"
     },
 
     "custom/weather": {
@@ -62,7 +63,7 @@
         "return-type": "json",
         "exec": "$HOME/.local/bin/weather-waybar",
         "interval": 900,
-        "on-click": "xdg-open https://wttr.in"
+        "on-click": "xdg-open https://share.google/xT33OekKxomp7lASI"
     },
 
     "cpu": {
