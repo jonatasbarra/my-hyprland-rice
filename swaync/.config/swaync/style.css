@@ -6,7 +6,7 @@
 }
 
 .control-center {
-    background-color: #1a1b26;
+    background-color: rgba(26, 27, 38, 0.75);
     border: 1px solid #292e42;
     border-radius: 12px;
     padding: 8px;

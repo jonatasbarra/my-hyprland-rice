@@ -30,3 +30,4 @@ target/
 
 # Zinit cache
 .zinit/
+kitty/.config/kitty/current-theme.conf
