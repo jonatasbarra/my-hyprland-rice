@@ -193,3 +193,10 @@ window#waybar.hidden {
     color: #f7768e;
     padding: 2px 8px 2px 8px;
 }
+
+/* ── Bluetooth ────────────────────────────────────── */
+
+#custom-bluetooth {
+    color: #7dcfff;
+    padding: 2px 8px;
+}

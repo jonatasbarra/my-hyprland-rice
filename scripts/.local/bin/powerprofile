@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# powerprofile — Rofi power profile switcher
+
+CURRENT=$(powerprofilesctl get)
+
+PERFORMANCE="󰓅 Performance"
+BALANCED="󰾅 Balanced"
+POWERSAVER="󰾆 Power Saver"
+
+case "$CURRENT" in
+    performance)  CURRENT_LABEL="$PERFORMANCE" ;;
+    balanced)     CURRENT_LABEL="$BALANCED" ;;
+    power-saver)  CURRENT_LABEL="$POWERSAVER" ;;
+esac
+
+CHOSEN=$(printf "%s\n" "$PERFORMANCE" "$BALANCED" "$POWERSAVER" \
+    | rofi -dmenu \
+           -p "Profile: ${CURRENT}" \
+           -theme-str 'window {width: 220px;}' \
+           -theme-str 'listview {lines: 3;}' \
+           -i)
+
+case "$CHOSEN" in
+    "$PERFORMANCE") powerprofilesctl set performance ;;
+    "$BALANCED")    powerprofilesctl set balanced ;;
+    "$POWERSAVER")  powerprofilesctl set power-saver ;;
+    *)              exit 0 ;;
+esac

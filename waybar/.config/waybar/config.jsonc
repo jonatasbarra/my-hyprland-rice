@@ -24,6 +24,7 @@
         "pulseaudio",
         "battery",
         "network",
+        "custom/bluetooth",
         "custom/powermenu",
         "tray"
     ],
@@ -82,6 +83,20 @@
         "on-click": "$HOME/.local/bin/powermenu"
     },
 
+    "custom/powerprofile": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "powerprofilesctl get | awk '{if($0==\"performance\") print \"{\\\"text\\\": \\\"󰓅\\\", \\\"tooltip\\\": \\\"Performance\\\"}\"; else if($0==\"balanced\") print \"{\\\"text\\\": \\\"󰾅\\\", \\\"tooltip\\\": \\\"Balanced\\\"}\"; else print \"{\\\"text\\\": \\\"󰾆\\\", \\\"tooltip\\\": \\\"Power Saver\\\"}\"}'",
+        "interval": 5,
+        "on-click": "$HOME/.local/bin/powerprofile"
+    },
+
+    "custom/bluetooth": {
+        "format": "󰂯",
+        "tooltip": false,
+        "on-click": "blueman-manager"
+    },
+
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": ["󰋙", "󰛩", "󰛨", "󰛧"],
@@ -106,7 +121,8 @@
         "format": "{icon} {capacity}%",
         "format-charging": "󰂄 {capacity}%",
         "format-plugged": "󰚥 {capacity}%",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click": "$HOME/.local/bin/powerprofile"
     },
 
     "network": {
@@ -114,7 +130,8 @@
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰤭 offline",
         "tooltip-format": "{ifname}: {ipaddr}\n󰤨 {signalStrength}%",
-        "max-length": 20
+        "max-length": 20,
+        "on-click": "networkmanager_dmenu"
     },
 
     "tray": {
