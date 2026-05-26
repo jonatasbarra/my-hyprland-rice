@@ -28,7 +28,7 @@ window#waybar.hidden {
 .modules-left,
 .modules-center,
 .modules-right {
-    background-color: rgba(26, 27, 38, 0.75);
+    background-color: rgba(26, 27, 38, 1);
     border: 1px solid rgba(122, 162, 247, 0.15);
     border-radius: 12px;
     padding: 2px 12px;   /* ← era 0 8px */
@@ -44,6 +44,11 @@ window#waybar.hidden {
 #pulseaudio,
 #battery,
 #network,
+#cpu,
+#memory,
+#custom-weather,
+#custom-bluetooth,
+#custom-powermenu,
 #tray {
     padding: 2px 10px;
     color: #c0caf5;
