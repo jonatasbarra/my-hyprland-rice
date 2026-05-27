@@ -15,3 +15,6 @@ visual-studio-code-bin
 
 # === SYSTEM ===
 snapper-rollback
+
+## GAMING
+game-devices-udev

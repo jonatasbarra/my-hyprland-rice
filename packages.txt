@@ -127,3 +127,8 @@ spotify-launcher
 mpv
 obs-studio
 imv
+
+## GAMING
+steam
+gamemode
+lib32-gamemode
