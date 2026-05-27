@@ -132,3 +132,9 @@ imv
 steam
 gamemode
 lib32-gamemode
+
+## GAME DEV & DESIGN
+godot
+gimp
+inkscape
+kdenlive
