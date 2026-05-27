@@ -142,3 +142,9 @@ kdenlive
 ## DEV EDITORS
 cursor-bin (aur)
 android-studio (aur)
+
+## PRODUCTIVITY
+qalculate-gtk
+mousepad
+rnote
+rclone

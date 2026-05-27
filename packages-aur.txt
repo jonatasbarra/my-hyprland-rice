@@ -22,3 +22,8 @@ game-devices-udev
 ## DEV EDITORS
 cursor-bin
 android-studio
+
+## PRODUCTIVITY
+obsidian
+pomatez
+onedrive-abraunegg
