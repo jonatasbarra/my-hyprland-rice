@@ -2,7 +2,7 @@
   "workbench.settings.applyToAllProfiles": ["open-in-browser.default"],
   "liveServer.settings.CustomBrowser": "chrome",
   "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
-  "workbench.colorTheme": "Best Themes - One Dark Pro No Italic",
+  "workbench.colorTheme": "Best Themes - Ayu Darkvenom",
   "security.workspace.trust.untrustedFiles": "open",
   "redhat.telemetry.enabled": true,
   "github.copilot.nextEditSuggestions.enabled": true,

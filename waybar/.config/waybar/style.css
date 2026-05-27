@@ -28,11 +28,11 @@ window#waybar.hidden {
 .modules-left,
 .modules-center,
 .modules-right {
-    background-color: rgba(26, 27, 38, 1);
-    border: 1px solid rgba(122, 162, 247, 0.15);
+    background-color: rgba(26, 27, 38, 1.0);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 12px;
-    padding: 2px 12px;   /* ← era 0 8px */
-    margin: 0 6px;       /* ← era 0 4px */
+    padding: 1px 8px;   /* ← era 0 8px */
+    margin: 0 0px;       /* ← era 0 4px */
 }
 
 /* ── Base dos módulos ────────────────────────────── */
@@ -50,14 +50,15 @@ window#waybar.hidden {
 #custom-bluetooth,
 #custom-powermenu,
 #tray {
-    padding: 2px 10px;
+    padding: 2px 6px;
     color: #c0caf5;
+    font-size: 13px;
 }
 
 /* ── Workspaces ──────────────────────────────────── */
 
 #workspaces button {
-    padding: 2px 8px;
+    padding: 2px 6px;
     color: #565f89;
     background: transparent;
     border-radius: 8px;

@@ -8,17 +8,17 @@
     "margin-right": 10,
 
     "modules-left": [
-        "hyprland/workspaces",
+        "custom/weather",
         "custom/media"
     ],
 
-    "modules-center": [
-        "custom/weather",
+    "modules-center": [        
         "wlr/taskbar",
-        "clock"
+        "hyprland/workspaces"        
     ],
 
     "modules-right": [
+        "tray",
         "cpu",
         "memory",
         "backlight",
@@ -26,8 +26,8 @@
         "battery",
         "network",
         "custom/bluetooth",
-        "custom/powermenu",
-        "tray"
+        "clock",
+        "custom/powermenu"    
     ],
 
     // ── Módulos ──────────────────────────────────────────
@@ -39,7 +39,7 @@
             "default": "󰊠"
         },
         "persistent-workspaces": {
-            "*": 4
+            "*": 3
         }
     },
 

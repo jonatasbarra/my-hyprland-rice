@@ -65,7 +65,7 @@ case "$CODE" in
     *) ICON="󰖑" ;;             # Default
 esac
 
-TEXT="${ICON}  ${TEMP_C}°C  ${TEMP_F}°F  ${DESC}"
+TEXT="${ICON}  ${TEMP_C}°C  ${TEMP_F}°F"  # era com   ${DESC} no final
 TOOLTIP="${AREA}\n${DESC}\n🌡 ${TEMP_C}°C / ${TEMP_F}°F"
 
 echo "{\"text\": \"${TEXT}\", \"tooltip\": \"${TOOLTIP}\", \"class\": \"weather\"}"
