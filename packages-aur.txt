@@ -18,3 +18,7 @@ snapper-rollback
 
 ## GAMING
 game-devices-udev
+
+## DEV EDITORS
+cursor-bin
+android-studio

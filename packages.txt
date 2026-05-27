@@ -138,3 +138,7 @@ godot
 gimp
 inkscape
 kdenlive
+
+## DEV EDITORS
+cursor-bin (aur)
+android-studio (aur)
