@@ -27,3 +27,7 @@ android-studio
 obsidian
 pomatez
 onedrive-abraunegg
+
+## DEV EXTRAS
+postman-bin
+dbeaver

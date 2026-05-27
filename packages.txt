@@ -148,3 +148,6 @@ qalculate-gtk
 mousepad
 rnote
 rclone
+
+## DEV EXTRAS
+wireshark-qt
